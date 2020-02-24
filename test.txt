@@ -1,2 +1,22 @@
-7fbc962c7a7cef805cef76483ba47818b9b1ffb6
-aaa
+setup是初始化程序，会生成abe和abs的公钥、主密钥和私钥，这些路径都需要输入，运行一次即可
+	enc_sig是filter中与clean绑定的程序，将文件输入加密，生成中间文件，再对中间文件签名，把所有内容输出
+	verify_dec是filter中与smudge绑定的程序，将pull下来的文件输入验签，生成中间文件，在对中间文件解密，把明文输出
+
+git filter设置：
+	git clone一个仓库后，或者本地git init一个仓库后进入仓库目录
+	cd ./.git
+	cd ./info   此时里面没有attributes文件
+	echo "* filter=test" >> attributes     test是随便起的名字
+	git config --global filter.test.clean "xxx/xxx/xx/test6"    
+	全局设置，其他仓库如果attributes中也使用叫test的filter，会使用同样配置
+	git config --global filter.test.smudge "xxx/xxx/xx/test7"
+	查看此仓库的filter：
+	git config filter.test.clean 
+	git config filter.test.smudge 
+	
+	另外的查看：
+	git add之后在暂存区就有签名后的文件
+	git ls-files -s   显示暂存区的所有文件及其hash
+	如显示100644  6cef9234rhusjkdhbvous7896t   0     abc.txt
+	想查看暂存区的abc.txt，用hash前4位，把内容放abc_temp.txt中
+	git cat-file -p 6cef > abc_temp.txt
