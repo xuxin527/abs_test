@@ -20,3 +20,4 @@ git filter设置：
 	如显示100644  6cef9234rhusjkdhbvous7896t   0     abc.txt
 	想查看暂存区的abc.txt，用hash前4位，把内容放abc_temp.txt中
 	git cat-file -p 6cef > abc_temp.txt
+edvdzbc
