@@ -1,13 +1,8 @@
-设置：
-	git clone一个仓库后，或者本地git init一个仓库后进入仓库目录
-	cd ./.git
-	cd ./info   此时里面没有attributes文件
-	echo "* filter=test" >> attributes     test是随便起的名字
-	git config --global filter.test.clean "xxx/xxx/xx/test6"    
-	全局设置，其他仓库如果attributes中也使用叫test的filter，会使用同样配置
-	git config --global filter.test.smudge "xxx/xxx/xx/test7"
-	查看此仓库的filter：
-	git config filter.test.clean 
-	git config filter.test.smudge
-123456
+wsdvkbjbsdvj;w
+dsvljnlwjrnvknwkb
+     oshdnvckriej'nls
+nscipwnv
 
+
+
+dsjnv;one ;kvms'a,:"<M
